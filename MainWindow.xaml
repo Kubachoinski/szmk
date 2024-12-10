@@ -1,0 +1,58 @@
+﻿<Window x:Class="z4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="z4" Height="450" Width="400" Background="LightSteelBlue">
+
+    <Grid Margin="10">
+        <GroupBox Header="Dane Pracownika" Margin="0,0,0,180">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Imię:" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="txtImie" VerticalAlignment="Center"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Nazwisko:" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="txtNazwisko" VerticalAlignment="Center"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Stanowisko:" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Name="cmbStanowisko" VerticalAlignment="Center">
+                    <ComboBoxItem>Kierownik</ComboBoxItem>
+                    <ComboBoxItem>Starszy programista</ComboBoxItem>
+                    <ComboBoxItem>Młodszy programista</ComboBoxItem>
+                    <ComboBoxItem>Tester</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Generowanie hasła" VerticalAlignment="Bottom" Margin="0,110,0,60">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Ile znaków?" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Name="txtIleZnakow" VerticalAlignment="Center"/>
+
+                <CheckBox Grid.Row="1" Name="chkMaleWielkieLitery" Content="Małe i wielkie litery" IsChecked="True"/>
+                <CheckBox Grid.Row="2" Name="chkCyfry" Content="Cyfry"/>
+                <CheckBox Grid.Row="3" Name="chkZnakiSpecjalne" Content="Znaki specjalne"/>
+            </Grid>
+        </GroupBox>
+
+        <Button Content="Generuj hasło" Name="btnGenerujHaslo" Width="120" Height="30" Background="SteelBlue" Foreground="White"
+                VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,150,20" Click="btnGenerujHaslo_Click"/>
+        <Button Content="Zatwierdź" Name="btnZatwierdz" Width="160" Height="30" Background="SteelBlue" Foreground="White"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,20" Click="btnZatwierdz_Click"/>
+    </Grid>
+</Window>
